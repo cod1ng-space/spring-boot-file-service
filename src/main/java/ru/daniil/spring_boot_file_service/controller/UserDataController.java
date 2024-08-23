@@ -4,6 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -18,6 +19,7 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
+@RequestMapping("/file-manager")
 public class UserDataController {
     private final UserDataService userDataService;
 
@@ -25,16 +27,14 @@ public class UserDataController {
     public ResponseEntity<Long> create(@RequestBody UserDataDTO dto){
         return new ResponseEntity<>(userDataService.create(dto), HttpStatus.OK);
     }
-
-    /*
-    @GetMapping("/{id}")
-    public ResponseEntity<UserData> readAll(@PathVariable Long id){
-        return new ResponseEntity<>(userDataService.find(id), HttpStatus.OK);
-    }
-     */
+    
     @GetMapping
-    public ResponseEntity<UserData> find(){
-        return new ResponseEntity<>(userDataService.find(0l), HttpStatus.OK);
+    public ResponseEntity<List<UserData>> readAll(){
+        return new ResponseEntity<>(userDataService.readAll(), HttpStatus.OK);
     }
     
+    @GetMapping("/{id}")
+    public ResponseEntity<UserData> find(@PathVariable Long id){
+        return new ResponseEntity<>(userDataService.find(id), HttpStatus.OK);
+    }
 }

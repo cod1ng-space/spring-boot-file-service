@@ -22,13 +22,11 @@ public class UserDataService{
         return userDataRepository.save(userData).getId();
     }
 
-    /*
     public List<UserData> readAll(){
         return userDataRepository.findAll();
     }
-    */
-
+    
     public UserData find(Long id){
-        return userDataRepository.getReferenceById(id);
+        return userDataRepository.findById(id).orElse(null);
     }
 }
