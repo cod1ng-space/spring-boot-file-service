@@ -29,4 +29,8 @@ public class UserDataService{
     public UserData find(Long id){
         return userDataRepository.findById(id).orElse(null);
     }
+
+    public void delete(Long id){
+        userDataRepository.deleteById(id);
+    }
 }

@@ -37,4 +37,10 @@ public class UserDataController {
     public ResponseEntity<UserData> find(@PathVariable Long id){
         return new ResponseEntity<>(userDataService.find(id), HttpStatus.OK);
     }
+
+    @DeleteMapping("/{id}")
+    public HttpStatus delete(@PathVariable Long id){
+        userDataService.delete(id);
+        return HttpStatus.OK;
+    }
 }
