@@ -1,4 +1,4 @@
-Описание решения:
+**Описание решения:**
   В решении использовались spring-boot и posgreSQL согласно техническому заданию. Также был использован lombok для уменьшения количества кода.
 
   В микросервисе доступны следующие API-методы:
@@ -11,13 +11,13 @@
 <img width="1072" alt="image" src="https://github.com/user-attachments/assets/64ae875b-d096-4a66-b59f-b0e89e2adae3">
 
 
-Инструкция по запуску:
+**Инструкция по запуску:**
 1. Создать базу данных PosgreSQL с помощью приложения (например pgAdmin) или же консоли. Настройки базы данных лежат в файле src/main/resources/application.properties (По умолчанию название - "file-manager-bd", порт - 5432, логин и пароль - "postgres")
 2. Зайти в корневую папку .../spring-boot-file-service с помощью команды cd в командной строке. Написать в консоль команду "mvn spring-boot:run". Важно иметь версию maven не ниже 3.9.9!
 3. Проект доступен в браузере по ссылке "http://localhost:8081/file-manager". Для тестирования можно использовать Postman или другую аналогичную программу.
 
 
-Примеры запросов с использование Postman:
+**Примеры запросов с использование Postman:**
 
 1. <img width="1073" alt="image" src="https://github.com/user-attachments/assets/049c78b8-0e0f-4a6c-83ad-c2aebc7bd995">
 2. <img width="1083" alt="image" src="https://github.com/user-attachments/assets/37b0f5fb-80cd-41a8-8ff3-3139e63e4b31">
