@@ -1,7 +1,7 @@
-Описание решения:
-В решении использовались spring-boot и posgreSQL согласно техническому заданию. Также был использован lombok для уменьшения количества кода.
+<img width="1074" alt="image" src="https://github.com/user-attachments/assets/3035c35a-3b52-488b-88a4-6a423e5fff6a">Описание решения:
+  В решении использовались spring-boot и posgreSQL согласно техническому заданию. Также был использован lombok для уменьшения количества кода.
 
-В микросервисе доступны следующие API-методы:
+  В микросервисе доступны следующие API-методы:
 1. GET без параметров. Возвращает список из всех существующих в данный момент файлов и их атрибутов. Данные возвращаются в порядке добавления! Пример запроса - http://localhost:8081/file-manager
 2. GET с путевым параметром id, который возвращает объект по его id. Пример запроса -  http://localhost:8081/file-manager/123
 3. GET запрос по адресу "http://localhost:8081/file-manager/pages", который осуществляет пагинацию и сортировку данных по дате создания. В запрос передаётся два параметра: offset - номер страницы(нумерация начинается с 0) и limit - количество объектов(файлов и их атрибутов) на одной странице. Имеются ограничения на их значения: offset >= 0, 1 <= limit <= 100. По умолчанию offset = 0, limit = 5. Пример запроса - http://localhost:8081/file-manager/pages?offset=1&limit=3
@@ -17,4 +17,10 @@
 3. Проект доступен в браузере по ссылке "http://localhost:8081/file-manager". Для тестирования можно использовать Postman или другую аналогичную программу.
 
 
-Примеры тестовых запросов:
+Примеры запросов с использование Postman:
+
+1. <img width="1073" alt="image" src="https://github.com/user-attachments/assets/049c78b8-0e0f-4a6c-83ad-c2aebc7bd995">
+2. <img width="1083" alt="image" src="https://github.com/user-attachments/assets/37b0f5fb-80cd-41a8-8ff3-3139e63e4b31">
+3. <img width="1079" alt="image" src="https://github.com/user-attachments/assets/1cfaa4f6-7ece-4e39-b391-fc0f55a3844d">
+4. <img width="1074" alt="image" src="https://github.com/user-attachments/assets/27b4adc1-2a00-43f9-9636-16427700958e">
+5. <img width="1074" alt="image" src="https://github.com/user-attachments/assets/3c138569-4331-4d6f-b0e8-a7b2ca198183">
