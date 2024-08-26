@@ -26,12 +26,6 @@ import java.util.List;
 @RequestMapping("/file-manager")
 public class UserDataController {
     private final UserDataService userDataService;
-
-    @PostMapping
-    public ResponseEntity<Long> create(@RequestBody UserDataDTO dto){
-        return new ResponseEntity<>(userDataService.create(dto), HttpStatus.OK);
-    }
-    
     
     @GetMapping
     public ResponseEntity<List<UserData>> readAll(){
@@ -51,6 +45,11 @@ public class UserDataController {
         return new ResponseEntity<>(userDataService.pagingAndSortingData(limit, offset), HttpStatus.OK);
     }
 
+    @PostMapping
+    public ResponseEntity<Long> create(@RequestBody UserDataDTO dto){
+        return new ResponseEntity<>(userDataService.create(dto), HttpStatus.OK);
+    }
+    
     @DeleteMapping("/{id}")
     public HttpStatus delete(@PathVariable Long id){
         userDataService.delete(id);
