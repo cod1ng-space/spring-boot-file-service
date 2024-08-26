@@ -1,11 +1,14 @@
 package ru.daniil.spring_boot_file_service.service;
 
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import ru.daniil.spring_boot_file_service.dto.UserDataDTO;
 import ru.daniil.spring_boot_file_service.entity.UserData;
 import ru.daniil.spring_boot_file_service.repository.UserDataRepository;
+import org.springframework.data.domain.Pageable;
 
 @Service
 @AllArgsConstructor
@@ -24,6 +27,11 @@ public class UserDataService{
 
     public List<UserData> readAll(){
         return userDataRepository.findAll();
+    }
+
+    public List<UserData> pagingAndSortingData(Integer limit, Integer offset){
+        Pageable page = PageRequest.of(offset, limit, Sort.by("creationDate"));
+        return userDataRepository.findBy(page);
     }
     
     public UserData find(Long id){
