@@ -6,8 +6,9 @@
 2. GET с путевым параметром id, который возвращает объект по его id. Пример запроса -  http://localhost:8081/file-manager/123
 3. GET запрос по адресу "http://localhost:8081/file-manager/pages", который осуществляет пагинацию и сортировку данных по дате создания. В запрос передаётся два параметра: offset - номер страницы(нумерация начинается с 0) и limit - количество объектов(файлов и их атрибутов) на одной странице. Имеются ограничения на их значения: offset >= 0, 1 <= limit <= 100. По умолчанию offset = 0, limit = 5. Пример запроса - http://localhost:8081/file-manager/pages?offset=1&limit=3
 4. POST запрос по адресу "http://localhost:8081/file-manager", который добавляет данные и возвращает id добавленного элемента. Важен формат передачи даты создания - "ГГГГ-ММ-ДД ЧЧ:ММ:СС". Пример запроса:
-<img width="1072" alt="image" src="https://github.com/user-attachments/assets/a6680c66-d5a0-4c78-bc5c-67ce0d5d4862">
-
+<img width="1074" alt="image" src="https://github.com/user-attachments/assets/ceecde27-a877-42ff-b892-0c7dc9b32631">
+5. DELETE запрос, который соответственно удаляет файл с его атрибутами по id. Пример запроса:
+<img width="1072" alt="image" src="https://github.com/user-attachments/assets/64ae875b-d096-4a66-b59f-b0e89e2adae3">
 
 
 Инструкция по запуску:
